@@ -6,50 +6,50 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /*
-	JDBC²Ù×÷Êı¾İ¿âµÄ²½Öè
-	1.×¢²áÇı¶¯
-	    ¸æÖªJVMÊ¹ÓÃµÄÊÇÄÄÒ»¸öÊı¾İ¿âµÄÇı¶¯
-	2.»ñµÃÁ¬½Ó
-	   Ê¹ÓÃJDBCÖĞµÄÀà,Íê³É¶ÔMySQLÊı¾İ¿âµÄÁ¬½Ó
-	3.»ñµÃÓï¾äÖ´ĞĞÆ½Ì¨
-	  Í¨¹ıÁ¬½Ó¶ÔÏó»ñÈ¡¶ÔSQLÓï¾äµÄÖ´ĞĞÕß¶ÔÏó
-	4.Ö´ĞĞsqlÓï¾ä
-	  Ê¹ÓÃÖ´ĞĞÕß¶ÔÏó,ÏòÊı¾İ¿âÖ´ĞĞSQLÓï¾ä
-	  »ñÈ¡µ½Êı¾İ¿âµÄÖ´ĞĞºóµÄ½á¹û
-	5.´¦Àí½á¹û
-	6.ÊÍ·Å×ÊÔ´  Ò»¶Ñclose()
+	JDBCæ“ä½œæ•°æ®åº“çš„æ­¥éª¤
+	1.æ³¨å†Œé©±åŠ¨
+	    å‘ŠçŸ¥JVMä½¿ç”¨çš„æ˜¯å“ªä¸€ä¸ªæ•°æ®åº“çš„é©±åŠ¨
+	2.è·å¾—è¿æ¥
+	   ä½¿ç”¨JDBCä¸­çš„ç±»,å®Œæˆå¯¹MySQLæ•°æ®åº“çš„è¿æ¥
+	3.è·å¾—è¯­å¥æ‰§è¡Œå¹³å°
+	  é€šè¿‡è¿æ¥å¯¹è±¡è·å–å¯¹SQLè¯­å¥çš„æ‰§è¡Œè€…å¯¹è±¡
+	4.æ‰§è¡Œsqlè¯­å¥
+	  ä½¿ç”¨æ‰§è¡Œè€…å¯¹è±¡,å‘æ•°æ®åº“æ‰§è¡ŒSQLè¯­å¥
+	  è·å–åˆ°æ•°æ®åº“çš„æ‰§è¡Œåçš„ç»“æœ
+	5.å¤„ç†ç»“æœ
+	6.é‡Šæ”¾èµ„æº  ä¸€å †close()
  */
 public class JDBCDemo {
 	public static void main(String[] args)throws ClassNotFoundException,SQLException{
-		//1.×¢²áÇı¶¯ ·´Éä¼¼Êõ,½«Çı¶¯Àà¼ÓÈëµ½ÄÚÈİ
-		// Ê¹ÓÃjava.sql.DriverManagerÀà¾²Ì¬·½·¨ registerDriver(Driver driver)
-		// DiverÊÇÒ»¸ö½Ó¿Ú,²ÎÊı´«µİ,MySQLÇı¶¯³ÌĞòÖĞµÄÊµÏÖÀà
+		//1.æ³¨å†Œé©±åŠ¨ åå°„æŠ€æœ¯,å°†é©±åŠ¨ç±»åŠ å…¥åˆ°å†…å®¹
+		// ä½¿ç”¨java.sql.DriverManagerç±»é™æ€æ–¹æ³• registerDriver(Driver driver)
+		// Diveræ˜¯ä¸€ä¸ªæ¥å£,å‚æ•°ä¼ é€’,MySQLé©±åŠ¨ç¨‹åºä¸­çš„å®ç°ç±»
 		//DriverManager.registerDriver(new Driver());
-		//Çı¶¯ÀàÔ´´úÂë,×¢²á2´ÎÇı¶¯³ÌĞò
+		//é©±åŠ¨ç±»æºä»£ç ,æ³¨å†Œ2æ¬¡é©±åŠ¨ç¨‹åº
 		Class.forName("com.mysql.jdbc.Driver");
 		
-		//2.»ñµÃÊı¾İ¿âÁ¬½Ó  DriverManagerÀàÖĞ¾²Ì¬·½·¨
+		//2.è·å¾—æ•°æ®åº“è¿æ¥  DriverManagerç±»ä¸­é™æ€æ–¹æ³•
 		//static Connection getConnection(String url, String user, String password)  
-		//·µ»ØÖµÊÇConnection½Ó¿ÚµÄÊµÏÖÀà,ÔÚmysqlÇı¶¯³ÌĞò
-		//url: Êı¾İ¿âµØÖ·  jdbc:mysql://Á¬½ÓÖ÷»úIP:¶Ë¿ÚºÅ//Êı¾İ¿âÃû×Ö
+		//è¿”å›å€¼æ˜¯Connectionæ¥å£çš„å®ç°ç±»,åœ¨mysqlé©±åŠ¨ç¨‹åº
+		//url: æ•°æ®åº“åœ°å€  jdbc:mysql://è¿æ¥ä¸»æœºIP:ç«¯å£å·//æ•°æ®åº“åå­—
 		String url = "jdbc:mysql://localhost:3306/mybase";
 		String username="root";
 		String password="123";
 		Connection con = DriverManager.getConnection(url, username, password);
 		
-		//3.»ñµÃÓï¾äÖ´ĞĞÆ½Ì¨, Í¨¹ıÊı¾İ¿âÁ¬½Ó¶ÔÏó,»ñÈ¡µ½SQLÓï¾äµÄÖ´ĞĞÕß¶ÔÏó
-		// con¶ÔÏóµ÷ÓÃ·½·¨   Statement createStatement() »ñÈ¡Statement¶ÔÏó,½«SQLÓï¾ä·¢ËÍµ½Êı¾İ¿â
-		// ·µ»ØÖµÊÇ Statement½Ó¿ÚµÄÊµÏÖÀà¶ÔÏó,,ÔÚmysqlÇı¶¯³ÌĞò
+		//3.è·å¾—è¯­å¥æ‰§è¡Œå¹³å°, é€šè¿‡æ•°æ®åº“è¿æ¥å¯¹è±¡,è·å–åˆ°SQLè¯­å¥çš„æ‰§è¡Œè€…å¯¹è±¡
+		// conå¯¹è±¡è°ƒç”¨æ–¹æ³•   Statement createStatement() è·å–Statementå¯¹è±¡,å°†SQLè¯­å¥å‘é€åˆ°æ•°æ®åº“
+		// è¿”å›å€¼æ˜¯ Statementæ¥å£çš„å®ç°ç±»å¯¹è±¡,,åœ¨mysqlé©±åŠ¨ç¨‹åº
 		Statement stat = con.createStatement();
-		//	4.Ö´ĞĞsqlÓï¾ä
-		// Í¨¹ıÖ´ĞĞÕß¶ÔÏóµ÷ÓÃ·½·¨Ö´ĞĞSQLÓï¾ä,»ñÈ¡½á¹û
-		// int executeUpdate(String sql)  Ö´ĞĞÊı¾İ¿âÖĞµÄSQLÓï¾ä, insert delete update
-		// ·µ»ØÖµint,²Ù×÷³É¹¦Êı¾İ±í¶àÉÙĞĞ
+		//	4.æ‰§è¡Œsqlè¯­å¥
+		// é€šè¿‡æ‰§è¡Œè€…å¯¹è±¡è°ƒç”¨æ–¹æ³•æ‰§è¡ŒSQLè¯­å¥,è·å–ç»“æœ
+		// int executeUpdate(String sql)  æ‰§è¡Œæ•°æ®åº“ä¸­çš„SQLè¯­å¥, insert delete update
+		// è¿”å›å€¼int,æ“ä½œæˆåŠŸæ•°æ®è¡¨å¤šå°‘è¡Œ
 		int row = stat.executeUpdate
-				("INSERT INTO sort(sname,sprice,sdesc) VALUES('Æû³µÓÃÆ·',50000,'·è¿ñÕÇ¼Û')");
+				("INSERT INTO sort(sname,sprice,sdesc) VALUES('æ±½è½¦ç”¨å“',50000,'ç–¯ç‹‚æ¶¨ä»·')");
 		System.out.println(row);
 		
-		//6.ÊÍ·Å×ÊÔ´  Ò»¶Ñclose()
+		//6.é‡Šæ”¾èµ„æº  ä¸€å †close()
 		stat.close();
 		con.close();
 	}

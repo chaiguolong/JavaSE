@@ -6,29 +6,29 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 /*
- *  JDBC¼¼Êõ,²éÑ¯Êı¾İ±í,»ñÈ¡½á¹û¼¯
+ *  JDBCæŠ€æœ¯,æŸ¥è¯¢æ•°æ®è¡¨,è·å–ç»“æœé›†
  */
 public class JDBCDemo1 {
 	public static void main(String[] args) throws Exception{
-		//1. ×¢²áÇı¶¯
+		//1. æ³¨å†Œé©±åŠ¨
 		Class.forName("com.mysql.jdbc.Driver");
-		//2. »ñÈ¡Á¬½Ó¶ÔÏó
+		//2. è·å–è¿æ¥å¯¹è±¡
 		String url = "jdbc:mysql://localhost:3306/mybase";
 		String username="root";
 		String password="123";
 		Connection con = DriverManager.getConnection(url, username, password);
-		//3 .»ñÈ¡Ö´ĞĞSQL Óï¾ä¶ÔÏó
+		//3 .è·å–æ‰§è¡ŒSQL è¯­å¥å¯¹è±¡
 		Statement stat = con.createStatement();
-		// Æ´Ğ´²éÑ¯µÄSQL
+		// æ‹¼å†™æŸ¥è¯¢çš„SQL
 		String sql = "SELECT * FROM sort";
-		//4. µ÷ÓÃÖ´ĞĞÕß¶ÔÏó·½·¨,Ö´ĞĞSQLÓï¾ä»ñÈ¡½á¹û¼¯
-		// ResultSet executeQuery(String sql)  Ö´ĞĞSQLÓï¾äÖĞµÄselect²éÑ¯
-		// ·µ»ØÖµResultSet½Ó¿ÚµÄÊµÏÖÀà¶ÔÏó,ÊµÏÖÀàÔÚmysqlÇı¶¯ÖĞ
+		//4. è°ƒç”¨æ‰§è¡Œè€…å¯¹è±¡æ–¹æ³•,æ‰§è¡ŒSQLè¯­å¥è·å–ç»“æœé›†
+		// ResultSet executeQuery(String sql)  æ‰§è¡ŒSQLè¯­å¥ä¸­çš„selectæŸ¥è¯¢
+		// è¿”å›å€¼ResultSetæ¥å£çš„å®ç°ç±»å¯¹è±¡,å®ç°ç±»åœ¨mysqlé©±åŠ¨ä¸­
 		ResultSet rs = stat.executeQuery(sql);
-		//5 .´¦Àí½á¹û¼¯
-		// ResultSet½Ó¿Ú·½·¨ boolean next() ·µ»Øtrue,ÓĞ½á¹û¼¯,·µ»ØfalseÃ»ÓĞ½á¹û¼¯
+		//5 .å¤„ç†ç»“æœé›†
+		// ResultSetæ¥å£æ–¹æ³• boolean next() è¿”å›true,æœ‰ç»“æœé›†,è¿”å›falseæ²¡æœ‰ç»“æœé›†
 		while(rs.next()){
-			//»ñÈ¡Ã¿ÁĞÊı¾İ,Ê¹ÓÃÊÇResultSet½Ó¿ÚµÄ·½·¨ getXX·½·¨²ÎÊıÖĞ,½¨ÒéĞ´StringÁĞÃû
+			//è·å–æ¯åˆ—æ•°æ®,ä½¿ç”¨æ˜¯ResultSetæ¥å£çš„æ–¹æ³• getXXæ–¹æ³•å‚æ•°ä¸­,å»ºè®®å†™Stringåˆ—å
 			System.out.println(rs.getInt("sid")+"   "+rs.getString("sname")+
 					"   "+rs.getDouble("sprice")+"   "+rs.getString("sdesc"));
 		}

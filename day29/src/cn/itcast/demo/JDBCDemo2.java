@@ -7,8 +7,8 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 /*
- *  Java³ÌĞòÊµÏÖÓÃ»§µÇÂ¼,ÓÃ»§ÃûºÍÃÜÂë,Êı¾İ¿â¼ì²é
- *  ÑİÊ¾±»±ğÈË×¢Èë¹¥»÷
+ *  Javaç¨‹åºå®ç°ç”¨æˆ·ç™»å½•,ç”¨æˆ·åå’Œå¯†ç ,æ•°æ®åº“æ£€æŸ¥
+ *  æ¼”ç¤ºè¢«åˆ«äººæ³¨å…¥æ”»å‡»
  */
 public class JDBCDemo2 {
 	public static void main(String[] args)throws Exception {
@@ -23,7 +23,7 @@ public class JDBCDemo2 {
 		String user = sc.nextLine();
 		String pass = sc.nextLine();
 		
-		//Ö´ĞĞSQLÓï¾ä,Êı¾İ±í,²éÑ¯ÓÃ»§ÃûºÍÃÜÂë,Èç¹û´æÔÚ,µÇÂ¼³É¹¦,²»´æÔÚµÇÂ¼Ê§°Ü
+		//æ‰§è¡ŒSQLè¯­å¥,æ•°æ®è¡¨,æŸ¥è¯¢ç”¨æˆ·åå’Œå¯†ç ,å¦‚æœå­˜åœ¨,ç™»å½•æˆåŠŸ,ä¸å­˜åœ¨ç™»å½•å¤±è´¥
 		String sql = "SELECT * FROM users WHERE username='"+user+"' AND PASSWORD='"+pass+"'";
 		System.out.println(sql);
 		ResultSet rs = stat.executeQuery(sql);

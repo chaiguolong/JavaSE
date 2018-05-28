@@ -8,13 +8,13 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 /*
- *  Java³ÌĞòÊµÏÖÓÃ»§µÇÂ¼,ÓÃ»§ÃûºÍÃÜÂë,Êı¾İ¿â¼ì²é
- *  ·ÀÖ¹×¢Èë¹¥»÷
- *  Statement½Ó¿ÚÊµÏÖÀà,×÷ÓÃÖ´ĞĞSQLÓï¾ä,·µ»Ø½á¹û¼¯
- *  ÓĞÒ»¸ö×Ó½Ó¿ÚPreparedStatement  (SQLÔ¤±àÒë´æ´¢,¶à´Î¸ßĞ§µÄÖ´ĞĞSQL) 
- *  PreparedStatementµÄÊµÏÖÀàÊı¾İ¿âµÄÇı¶¯ÖĞ,ÈçºÎ»ñÈ¡½Ó¿ÚµÄÊµÏÖÀà
+ *  Javaç¨‹åºå®ç°ç”¨æˆ·ç™»å½•,ç”¨æˆ·åå’Œå¯†ç ,æ•°æ®åº“æ£€æŸ¥
+ *  é˜²æ­¢æ³¨å…¥æ”»å‡»
+ *  Statementæ¥å£å®ç°ç±»,ä½œç”¨æ‰§è¡ŒSQLè¯­å¥,è¿”å›ç»“æœé›†
+ *  æœ‰ä¸€ä¸ªå­æ¥å£PreparedStatement  (SQLé¢„ç¼–è¯‘å­˜å‚¨,å¤šæ¬¡é«˜æ•ˆçš„æ‰§è¡ŒSQL) 
+ *  PreparedStatementçš„å®ç°ç±»æ•°æ®åº“çš„é©±åŠ¨ä¸­,å¦‚ä½•è·å–æ¥å£çš„å®ç°ç±»
  *  
- *  ÊÇConnectionÊı¾İ¿âÁ¬½Ó¶ÔÏóµÄ·½·¨
+ *  æ˜¯Connectionæ•°æ®åº“è¿æ¥å¯¹è±¡çš„æ–¹æ³•
  *  PreparedStatement prepareStatement(String sql) 
           
  */
@@ -29,17 +29,17 @@ public class JDBCDemo3 {
 		String user = sc.nextLine();
 		String pass = sc.nextLine();
 		
-		//Ö´ĞĞSQLÓï¾ä,Êı¾İ±í,²éÑ¯ÓÃ»§ÃûºÍÃÜÂë,Èç¹û´æÔÚ,µÇÂ¼³É¹¦,²»´æÔÚµÇÂ¼Ê§°Ü
+		//æ‰§è¡ŒSQLè¯­å¥,æ•°æ®è¡¨,æŸ¥è¯¢ç”¨æˆ·åå’Œå¯†ç ,å¦‚æœå­˜åœ¨,ç™»å½•æˆåŠŸ,ä¸å­˜åœ¨ç™»å½•å¤±è´¥
 		String sql = "SELECT * FROM users WHERE username=? AND PASSWORD=?";
-		//µ÷ÓÃConnection½Ó¿ÚµÄ·½·¨prepareStatement,»ñÈ¡PrepareStatement½Ó¿ÚµÄÊµÏÖÀà
-		//·½·¨ÖĞ²ÎÊı,SQLÓï¾äÖĞµÄ²ÎÊıÈ«²¿²ÉÓÃÎÊºÅÕ¼Î»·û
+		//è°ƒç”¨Connectionæ¥å£çš„æ–¹æ³•prepareStatement,è·å–PrepareStatementæ¥å£çš„å®ç°ç±»
+		//æ–¹æ³•ä¸­å‚æ•°,SQLè¯­å¥ä¸­çš„å‚æ•°å…¨éƒ¨é‡‡ç”¨é—®å·å ä½ç¬¦
 		PreparedStatement pst =  con.prepareStatement(sql);
 		System.out.println(pst);
-		//µ÷ÓÃpst¶ÔÏóset·½·¨,ÉèÖÃÎÊºÅÕ¼Î»·ûÉÏµÄ²ÎÊı
+		//è°ƒç”¨pstå¯¹è±¡setæ–¹æ³•,è®¾ç½®é—®å·å ä½ç¬¦ä¸Šçš„å‚æ•°
 		pst.setObject(1, user);
 		pst.setObject(2, pass);
 		
-		//µ÷ÓÃ·½·¨,Ö´ĞĞSQL,»ñÈ¡½á¹û¼¯
+		//è°ƒç”¨æ–¹æ³•,æ‰§è¡ŒSQL,è·å–ç»“æœé›†
 		ResultSet rs = pst.executeQuery();
 		while(rs.next()){
 			System.out.println(rs.getString("username")+"   "+rs.getString("password"));
