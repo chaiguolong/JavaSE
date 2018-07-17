@@ -8,21 +8,21 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /*
- *  ´òÓ¡Á÷
+ *  æ‰“å°æµ
  *    PrintStream
  *    PrintWriter
- *  ´òÓ¡Á÷µÄÌØµã:
- *   1. ´ËÁ÷²»¸ºÔğÊı¾İÔ´,Ö»¸ºÔğÊı¾İÄ¿µÄ
- *   2. ÎªÆäËûÊä³öÁ÷,Ìí¼Ó¹¦ÄÜ
- *   3. ÓÀÔ¶²»»áÅ×³öIOException
- *      µ«ÊÇ,¿ÉÄÜÅ×³ö±ğµÄÒì³£
+ *  æ‰“å°æµçš„ç‰¹ç‚¹:
+ *   1. æ­¤æµä¸è´Ÿè´£æ•°æ®æº,åªè´Ÿè´£æ•°æ®ç›®çš„
+ *   2. ä¸ºå…¶ä»–è¾“å‡ºæµ,æ·»åŠ åŠŸèƒ½
+ *   3. æ°¸è¿œä¸ä¼šæŠ›å‡ºIOException
+ *      ä½†æ˜¯,å¯èƒ½æŠ›å‡ºåˆ«çš„å¼‚å¸¸
  *   
- *   Á½¸ö´òÓ¡Á÷µÄ·½·¨,ÍêÈ«Ò»ÖÂ
- *    ¹¹Ôì·½·¨,¾ÍÊÇ´òÓ¡Á÷µÄÊä³öÄ¿µÄ¶Ë
+ *   ä¸¤ä¸ªæ‰“å°æµçš„æ–¹æ³•,å®Œå…¨ä¸€è‡´
+ *    æ„é€ æ–¹æ³•,å°±æ˜¯æ‰“å°æµçš„è¾“å‡ºç›®çš„ç«¯
  *    PrintStream
- *       ¹¹Ôì·½·¨,½ÓÊÕFileÀàĞÍ,½ÓÊÕ×Ö·û´®ÎÄ¼şÃû,½ÓÊÕ×Ö½ÚÊä³öÁ÷OutputStream
+ *       æ„é€ æ–¹æ³•,æ¥æ”¶Fileç±»å‹,æ¥æ”¶å­—ç¬¦ä¸²æ–‡ä»¶å,æ¥æ”¶å­—èŠ‚è¾“å‡ºæµOutputStream
  *    PrintWriter  
- *       ¹¹Ôì·½·¨,½ÓÊÕFileÀàĞÍ,½ÓÊÕ×Ö·û´®ÎÄ¼şÃû,½ÓÊÕ×Ö½ÚÊä³öÁ÷OutputStream, ½ÓÊÕ×Ö·ûÊä³öÁ÷Writer
+ *       æ„é€ æ–¹æ³•,æ¥æ”¶Fileç±»å‹,æ¥æ”¶å­—ç¬¦ä¸²æ–‡ä»¶å,æ¥æ”¶å­—èŠ‚è¾“å‡ºæµOutputStream, æ¥æ”¶å­—ç¬¦è¾“å‡ºæµWriter
  *   
  */
 public class PrintWriterDemo {
@@ -31,11 +31,11 @@ public class PrintWriterDemo {
 
 	}
 	/* 
-	 * ´òÓ¡Á÷,¿ÉÒÔ¿ªÆô×Ô¶¯Ë¢ĞÂ¹¦ÄÜ
-	 * Âú×ã2¸öÌõ¼ş:
-	 *   1. Êä³öµÄÊı¾İÄ¿µÄ±ØĞëÊÇÁ÷¶ÔÏó
+	 * æ‰“å°æµ,å¯ä»¥å¼€å¯è‡ªåŠ¨åˆ·æ–°åŠŸèƒ½
+	 * æ»¡è¶³2ä¸ªæ¡ä»¶:
+	 *   1. è¾“å‡ºçš„æ•°æ®ç›®çš„å¿…é¡»æ˜¯æµå¯¹è±¡
 	 *       OutputStream  Writer
-	 *   2. ±ØĞëµ÷ÓÃprintln,printf,formatÈı¸ö·½·¨ÖĞµÄÒ»¸ö,ÆôÓÃ×Ô¶¯Ë¢ĞÂ
+	 *   2. å¿…é¡»è°ƒç”¨println,printf,formatä¸‰ä¸ªæ–¹æ³•ä¸­çš„ä¸€ä¸ª,å¯ç”¨è‡ªåŠ¨åˆ·æ–°
 	 */
 	public static void function_3()throws  IOException{
 		//File f = new File("XXX.txt");
@@ -48,19 +48,19 @@ public class PrintWriterDemo {
 	}
 	
 	/*
-	 * ´òÓ¡Á÷,Êä³öÄ¿µÄ,ÊÇÁ÷¶ÔÏó
-	 * ¿ÉÒÔÊÇ×Ö½ÚÊä³öÁ÷,¿ÉÒÔÊÇ×Ö·ûµÄÊä³öÁ÷
+	 * æ‰“å°æµ,è¾“å‡ºç›®çš„,æ˜¯æµå¯¹è±¡
+	 * å¯ä»¥æ˜¯å­—èŠ‚è¾“å‡ºæµ,å¯ä»¥æ˜¯å­—ç¬¦çš„è¾“å‡ºæµ
 	 * OutputStream  Writer
 	 */
 	public static void function_2() throws IOException{
 	//	FileOutputStream fos = new FileOutputStream("c:\\3.txt");
 		FileWriter fw = new FileWriter("c:\\4.txt");
 		PrintWriter pw = new PrintWriter(fw);
-		pw.println("´òÓ¡Á÷");
+		pw.println("æ‰“å°æµ");
 		pw.close();
 	}
 	/*
-	 * ´òÓ¡Á÷,Êä³öÄ¿µÄ,StringÎÄ¼şÃû
+	 * æ‰“å°æµ,è¾“å‡ºç›®çš„,Stringæ–‡ä»¶å
 	 */
 	public static void function_1() throws FileNotFoundException{
 		PrintWriter pw = new PrintWriter("c:\\2.txt");
@@ -69,9 +69,9 @@ public class PrintWriterDemo {
 	}
 	
 	/*
-	 * ´òÓ¡Á÷,ÏòFile¶ÔÏóµÄÊı¾İÄ¿µÄĞ´ÈëÊı¾İ
-	 * ·½·¨print println  Ô­ÑùÊä³ö
-	 * write·½·¨×ßÂë±í
+	 * æ‰“å°æµ,å‘Fileå¯¹è±¡çš„æ•°æ®ç›®çš„å†™å…¥æ•°æ®
+	 * æ–¹æ³•print println  åŸæ ·è¾“å‡º
+	 * writeæ–¹æ³•èµ°ç è¡¨
 	 */
 	public static void function() throws FileNotFoundException{
 		File file = new File("c:\\1.txt");

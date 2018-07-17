@@ -7,9 +7,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /*
- * ´òÓ¡Á÷ÊµÏÖÎÄ±¾¸´ÖÆ
- *   ¶ÁÈ¡Êı¾İÔ´  BufferedReader+File ¶ÁÈ¡ÎÄ±¾ĞĞ
- *   Ğ´ÈëÊı¾İÄ¿µÄ PrintWriter+println ×Ô¶¯Ë¢ĞÂ
+ * æ‰“å°æµå®ç°æ–‡æœ¬å¤åˆ¶
+ *   è¯»å–æ•°æ®æº  BufferedReader+File è¯»å–æ–‡æœ¬è¡Œ
+ *   å†™å…¥æ•°æ®ç›®çš„ PrintWriter+println è‡ªåŠ¨åˆ·æ–°
  */
 public class PrintWriterDemo1 {
 	public static void main(String[] args) throws IOException{

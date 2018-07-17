@@ -7,9 +7,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /*
- *  IOÁ÷¶ÔÏó,ÊµÏÖ¶ÔÏóPersonĞòÁĞ»¯,ºÍ·´ĞòÁĞ»¯
- *  ObjectOutputStream Ğ´¶ÔÏó,ÊµÏÖĞòÁĞ»¯
- *  ObjectInputStream ¶ÁÈ¡¶ÔÏó,ÊµÏÖ·´ĞòÁĞ»¯
+ *  IOæµå¯¹è±¡,å®ç°å¯¹è±¡Personåºåˆ—åŒ–,å’Œååºåˆ—åŒ–
+ *  ObjectOutputStream å†™å¯¹è±¡,å®ç°åºåˆ—åŒ–
+ *  ObjectInputStream è¯»å–å¯¹è±¡,å®ç°ååºåˆ—åŒ–
  */
 public class ObjectStreamDemo {
 	public static void main(String[] args)throws IOException, ClassNotFoundException {
@@ -18,15 +18,15 @@ public class ObjectStreamDemo {
 	}
 	/*
 	 * ObjectInputStream
-	 * ¹¹Ôì·½·¨:ObjectInputStream(InputStream in)
-	 * ´«µİÈÎÒâµÄ×Ö½ÚÊäÈëÁ÷,ÊäÈëÁ÷·â×°ÎÄ¼ş,±ØĞëÊÇĞòÁĞ»¯µÄÎÄ¼ş
-	 * Object readObject()  ¶ÁÈ¡¶ÔÏó
+	 * æ„é€ æ–¹æ³•:ObjectInputStream(InputStream in)
+	 * ä¼ é€’ä»»æ„çš„å­—èŠ‚è¾“å…¥æµ,è¾“å…¥æµå°è£…æ–‡ä»¶,å¿…é¡»æ˜¯åºåˆ—åŒ–çš„æ–‡ä»¶
+	 * Object readObject()  è¯»å–å¯¹è±¡
 	 */
 	public static void readObject() throws IOException, ClassNotFoundException{
 		FileInputStream fis = new FileInputStream("c:\\person.txt");
-		//´´½¨·´ĞòÁĞ»¯Á÷,¹¹Ôì·½·¨ÖĞ,´«µİ×Ö½ÚÊäÈëÁ÷
+		//åˆ›å»ºååºåˆ—åŒ–æµ,æ„é€ æ–¹æ³•ä¸­,ä¼ é€’å­—èŠ‚è¾“å…¥æµ
 		ObjectInputStream ois = new ObjectInputStream(fis);
-		//µ÷ÓÃ·´ĞòÁĞ»¯Á÷µÄ·½·¨ readObject()¶ÁÈ¡¶ÔÏó
+		//è°ƒç”¨ååºåˆ—åŒ–æµçš„æ–¹æ³• readObject()è¯»å–å¯¹è±¡
 		Object obj =ois.readObject();
 		System.out.println(obj);
 		ois.close();
@@ -34,17 +34,17 @@ public class ObjectStreamDemo {
 	
 	/*
 	 * ObjectOutputStream
-	 * ¹¹Ôì·½·¨: ObjectOutputStream(OutputSteam out)
-	 * ´«µİÈÎÒâµÄ×Ö½ÚÊä³öÁ÷
-	 * void writeObject(Object obj)Ğ´³ö¶ÔÏóµÄ·½·¨
+	 * æ„é€ æ–¹æ³•: ObjectOutputStream(OutputSteam out)
+	 * ä¼ é€’ä»»æ„çš„å­—èŠ‚è¾“å‡ºæµ
+	 * void writeObject(Object obj)å†™å‡ºå¯¹è±¡çš„æ–¹æ³•
 	 */
 	public static void writeObject() throws IOException{
-		//´´½¨×Ö½ÚÊä³öÁ÷,·â×°ÎÄ¼ş
+		//åˆ›å»ºå­—èŠ‚è¾“å‡ºæµ,å°è£…æ–‡ä»¶
 		FileOutputStream fos = new FileOutputStream("c:\\person.txt");
-		//´´½¨Ğ´³ö¶ÔÏóµÄĞòÁĞ»¯Á÷µÄ¶ÔÏó,¹¹Ôì·½·¨´«µİ×Ö½ÚÊä³öÁ÷
+		//åˆ›å»ºå†™å‡ºå¯¹è±¡çš„åºåˆ—åŒ–æµçš„å¯¹è±¡,æ„é€ æ–¹æ³•ä¼ é€’å­—èŠ‚è¾“å‡ºæµ
 		ObjectOutputStream oos = new ObjectOutputStream(fos);
 		Person p = new Person("lisi",25);
-		//µ÷ÓÃĞòÁĞ»¯Á÷µÄ·½·¨writeObject,Ğ´³ö¶ÔÏó
+		//è°ƒç”¨åºåˆ—åŒ–æµçš„æ–¹æ³•writeObject,å†™å‡ºå¯¹è±¡
 		oos.writeObject(p);
 		oos.close();
 	}

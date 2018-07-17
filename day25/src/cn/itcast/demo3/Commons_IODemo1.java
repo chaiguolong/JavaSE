@@ -10,35 +10,35 @@ public class Commons_IODemo1 {
 		function_3();
 	}
 	/*
-	 * FileUtils¹¤¾ßÀà·½·¨
+	 * FileUtilså·¥å…·ç±»æ–¹æ³•
 	 * static void copyDirectoryToDirectory(File src,File desc)
-	 * ¸´ÖÆÎÄ¼ş¼Ğ
+	 * å¤åˆ¶æ–‡ä»¶å¤¹
 	 */
 	public static void function_3() throws IOException{
 		FileUtils.copyDirectoryToDirectory(new File("d:\\demo"), new File("c:\\"));
 	}
 	
 	/*
-	 * FileUtils¹¤¾ßÀàµÄ·½·¨
+	 * FileUtilså·¥å…·ç±»çš„æ–¹æ³•
 	 * static void copyFile(File src,File desc)
-	 * ¸´ÖÆÎÄ¼ş
+	 * å¤åˆ¶æ–‡ä»¶
 	 */
 	public static void function_2() throws IOException{
 		FileUtils.copyFile(new File("c:\\k.jpg"),new File("d:\\k.jpg"));
 	}
 	
 	/*
-	 * FileUtils¹¤¾ßÀàµÄ·½·¨
+	 * FileUtilså·¥å…·ç±»çš„æ–¹æ³•
 	 * static void writeStringToFile(File src,String date)
-	 * ½«×Ö·û´®Ö±½ÓĞ´µ½ÎÄ¼şÖĞ
+	 * å°†å­—ç¬¦ä¸²ç›´æ¥å†™åˆ°æ–‡ä»¶ä¸­
 	 */
 	public static void function_1() throws IOException{
-		FileUtils.writeStringToFile(new File("c:\\b.txt"),"ÎÒ°®Java±à³Ì");
+		FileUtils.writeStringToFile(new File("c:\\b.txt"),"æˆ‘çˆ±Javaç¼–ç¨‹");
 	}
 	
 	/*
-	 * FileUtils¹¤¾ßÀàµÄ·½·¨
-	 * static String readFileToString(File src)¶ÁÈ¡ÎÄ±¾,·µ»Ø×Ö·û´®
+	 * FileUtilså·¥å…·ç±»çš„æ–¹æ³•
+	 * static String readFileToString(File src)è¯»å–æ–‡æœ¬,è¿”å›å­—ç¬¦ä¸²
 	 */
 	 public static void function() throws IOException{
 		 String s = FileUtils.readFileToString(new File("c:\\a.txt"));

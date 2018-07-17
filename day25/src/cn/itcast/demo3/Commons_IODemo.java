@@ -7,9 +7,9 @@ public class Commons_IODemo {
 		function_2();
 	}
 	/*
-	 * FilenameUtilsÀàµÄ·½·¨
+	 * FilenameUtilsç±»çš„æ–¹æ³•
 	 * static boolean isExtension(String filename,String extension)
-	 * ÅĞ¶ÏÎÄ¼şÃûµÄºó×ºÊÇ²»ÊÇextension
+	 * åˆ¤æ–­æ–‡ä»¶åçš„åç¼€æ˜¯ä¸æ˜¯extension
 	 */
 	public static void function_2(){
 		boolean b = FilenameUtils.isExtension("Demo.java", "java");
@@ -17,9 +17,9 @@ public class Commons_IODemo {
 	}
 	
 	/*
-	 * FilenameUtilsÀàµÄ·½·¨
+	 * FilenameUtilsç±»çš„æ–¹æ³•
 	 * static String getName(String filename)
-	 * »ñÈ¡ÎÄ¼şÃû
+	 * è·å–æ–‡ä»¶å
 	 */
 	public static void function_1(){
 		String name = FilenameUtils.getName("c:\\windows\\");
@@ -27,9 +27,9 @@ public class Commons_IODemo {
 	}
 	
 	/*
-	 * FilenameUtilsÀàµÄ·½·¨
+	 * FilenameUtilsç±»çš„æ–¹æ³•
 	 * static String getExtension(String filename)
-	 * »ñÈ¡ÎÄ¼şÃûµÄÀ©Õ¹Ãû
+	 * è·å–æ–‡ä»¶åçš„æ‰©å±•å
 	 */
 	 public static void function(){
 		 String name = FilenameUtils.getExtension("c:\\windows");

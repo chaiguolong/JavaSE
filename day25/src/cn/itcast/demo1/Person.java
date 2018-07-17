@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public class Person implements Serializable{
 	public String name;
-	public /*transient×èÖ¹³ÉÔ±±äÁ¿ĞòÁĞ»¯*/ int age;
-	//Àà,×Ô¶¨ÒåÁËĞòÁĞºÅ,±àÒëÆ÷²»»á¼ÆËãĞòÁĞºÅ
+	public /*transienté˜»æ­¢æˆå‘˜å˜é‡åºåˆ—åŒ–*/ int age;
+	//ç±»,è‡ªå®šä¹‰äº†åºåˆ—å·,ç¼–è¯‘å™¨ä¸ä¼šè®¡ç®—åºåˆ—å·
 	private static final long serialVersionUID = 1478652478456L;
 
 	public Person(String name, int age) {
