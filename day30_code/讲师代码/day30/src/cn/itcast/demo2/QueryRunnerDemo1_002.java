@@ -24,6 +24,12 @@ public class QueryRunnerDemo1_002{
     public static void main(String[] args) throws SQLException{
         arrayHandler();
     }
+    /*
+     * 结果集第二种处理方法,ArrayListHandler
+     * 将结果集的每一行,封装到对象数组中,出现很多对象数组
+     * 对象数组存储到List集合
+     */
+
 
     /*
      * 结果集第一种处理方法,ArrayHandler
