@@ -3,22 +3,22 @@ package cn.itcast.demo1;
 import java.lang.reflect.Constructor;
 
 /*
- *  ·´Éä»ñÈ¡Ë½ÓĞµÄ¹¹Ôì·½·¨ÔËĞĞ
- *  ²»ÍÆ¼ö,ÆÆ»µÁË³ÌĞòµÄ·â×°ĞÔ,°²È«ĞÔ
- *  ±©Á¦·´Éä
+ *  åå°„è·å–ç§æœ‰çš„æ„é€ æ–¹æ³•è¿è¡Œ
+ *  ä¸æ¨è,ç ´åäº†ç¨‹åºçš„å°è£…æ€§,å®‰å…¨æ€§
+ *  æš´åŠ›åå°„
  */
 public class ReflectDemo4 {
 	public static void main(String[] args) throws Exception{
-		Class c = Class.forName("cn.itcast.demo1.Person");
-		//Constructor[] getDeclaredConstructors()»ñÈ¡ËùÓĞµÄ¹¹Ôì·½·¨,°üÀ¨Ë½ÓĞµÄ
-		/*Constructor[] cons = c.getDeclaredConstructors();
-		for(Constructor con : cons){
+		Class<?> c = Class.forName("cn.itcast.demo1.Person");
+		//Constructor[] getDeclaredConstructors()è·å–æ‰€æœ‰çš„æ„é€ æ–¹æ³•,åŒ…æ‹¬ç§æœ‰çš„
+		/*Constructor<?>[] cons = c.getDeclaredConstructors();
+		for(Constructor<?> con : cons){
 			System.out.println(con);
 		}*/
-		//Constructor getDeclaredConstructor(Class...c)»ñÈ¡µ½Ö¸¶¨²ÎÊıÁĞ±íµÄ¹¹Ôì·½·¨
-		Constructor con = c.getDeclaredConstructor(int.class,String.class);
+		//Constructor getDeclaredConstructor(Class...c)è·å–åˆ°æŒ‡å®šå‚æ•°åˆ—è¡¨çš„æ„é€ æ–¹æ³•
+		Constructor<?> con = c.getDeclaredConstructor(int.class,String.class);
 		
-		//ConstructorÀà,¸¸ÀàAccessibleObject,¶¨Òå·½·¨setAccessible(boolean b)
+		//Constructorç±»,çˆ¶ç±»AccessibleObject,å®šä¹‰æ–¹æ³•setAccessible(boolean b)
 		con.setAccessible(true);
 		
 		Object obj = con.newInstance(18,"lisi");

@@ -18,7 +18,7 @@ import java.util.Random;
  *  6.字节流读取图片,字节流将图片写入到目的文件夹中
  *  7.将上传成功写会客户端
  *  8.关闭资源
- */
+ /
 public class TCPServer_002{
     public static void main(String[] args) throws IOException{
         ServerSocket server = new ServerSocket(8000);

@@ -5,36 +5,36 @@ import java.lang.reflect.Method;
 import java.util.Properties;
 
 /*
- *  µ÷ÓÃPerson·½·¨,µ÷ÓÃStudent·½·¨,µ÷ÓÃWorker·½·¨
- *  Àà²»Çå³ş,·½·¨Ò²²»Çå³ş
- *  Í¨¹ıÅäÖÃÎÄ¼şÊµÏÖ´Ë¹¦ÄÜ
- *    ÔËĞĞµÄÀàÃûºÍ·½·¨Ãû×Ö,ÒÔ¼üÖµ¶ÔµÄĞÎÊ½,Ğ´ÔÚÎÄ±¾ÖĞ
- *    ÔËĞĞÄÄ¸öÀà,¶ÁÈ¡ÅäÖÃÎÄ¼ş¼´¿É
- *  ÊµÏÖ²½Öè:
- *    1. ×¼±¸ÅäÖÃÎÄ¼ş,¼üÖµ¶Ô
- *    2. IOÁ÷¶ÁÈ¡ÅäÖÃÎÄ¼ş  Reader
- *    3. ÎÄ¼şÖĞµÄ¼üÖµ¶Ô´æ´¢µ½¼¯ºÏÖĞ Properties
- *        ¼¯ºÏ±£´æµÄ¼üÖµ¶Ô,¾ÍÊÇÀàÃûºÍ·½·¨Ãû
- *    4. ·´Éä»ñÈ¡Ö¸¶¨ÀàµÄclassÎÄ¼ş¶ÔÏó
- *    5. classÎÄ¼ş¶ÔÏó,»ñÈ¡Ö¸¶¨µÄ·½·¨
- *    6. ÔËĞĞ·½·¨
+ *  è°ƒç”¨Personæ–¹æ³•,è°ƒç”¨Studentæ–¹æ³•,è°ƒç”¨Workeræ–¹æ³•
+ *  ç±»ä¸æ¸…æ¥š,æ–¹æ³•ä¹Ÿä¸æ¸…æ¥š
+ *  é€šè¿‡é…ç½®æ–‡ä»¶å®ç°æ­¤åŠŸèƒ½
+ *    è¿è¡Œçš„ç±»åå’Œæ–¹æ³•åå­—,ä»¥é”®å€¼å¯¹çš„å½¢å¼,å†™åœ¨æ–‡æœ¬ä¸­
+ *    è¿è¡Œå“ªä¸ªç±»,è¯»å–é…ç½®æ–‡ä»¶å³å¯
+ *  å®ç°æ­¥éª¤:
+ *    1. å‡†å¤‡é…ç½®æ–‡ä»¶,é”®å€¼å¯¹
+ *    2. IOæµè¯»å–é…ç½®æ–‡ä»¶  Reader
+ *    3. æ–‡ä»¶ä¸­çš„é”®å€¼å¯¹å­˜å‚¨åˆ°é›†åˆä¸­ Properties
+ *        é›†åˆä¿å­˜çš„é”®å€¼å¯¹,å°±æ˜¯ç±»åå’Œæ–¹æ³•å
+ *    4. åå°„è·å–æŒ‡å®šç±»çš„classæ–‡ä»¶å¯¹è±¡
+ *    5. classæ–‡ä»¶å¯¹è±¡,è·å–æŒ‡å®šçš„æ–¹æ³•
+ *    6. è¿è¡Œæ–¹æ³•
  */
 public class Test {
 	public static void main(String[] args) throws Exception{
-		//IOÁ÷¶ÁÈ¡ÅäÖÃÎÄ¼ş
+		//IOæµè¯»å–é…ç½®æ–‡ä»¶
 		FileReader r = new FileReader("config.properties");
-		//´´½¨¼¯ºÏ¶ÔÏó
+		//åˆ›å»ºé›†åˆå¯¹è±¡
 		Properties pro = new Properties();
-		//µ÷ÓÃ¼¯ºÏ·½·¨load,´«µİÁ÷¶ÔÏó
+		//è°ƒç”¨é›†åˆæ–¹æ³•load,ä¼ é€’æµå¯¹è±¡
 		pro.load(r);
 		r.close();
-		//Í¨¹ı¼ü»ñÈ¡Öµ
+		//é€šè¿‡é”®è·å–å€¼
 		String className = pro.getProperty("className");
 		String methodName = pro.getProperty("methodName");
-		//·´Éä»ñÈ¡Ö¸¶¨ÀàµÄclassÎÄ¼ş¶ÔÏó
-		Class c = Class.forName(className);
+		//åå°„è·å–æŒ‡å®šç±»çš„classæ–‡ä»¶å¯¹è±¡
+		Class<?> c = Class.forName(className);
 		Object obj = c.newInstance();
-		//»ñÈ¡Ö¸¶¨µÄ·½·¨Ãû
+		//è·å–æŒ‡å®šçš„æ–¹æ³•å
 		Method method = c.getMethod(methodName);
 		method.invoke(obj);
 	}

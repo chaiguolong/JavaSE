@@ -1,25 +1,25 @@
 package cn.itcast.demo1;
 /*
- *  »ñÈ¡Ò»¸öÀàµÄclassÎÄ¼ş¶ÔÏóµÄÈıÖÖ·½Ê½
- *   1. ¶ÔÏó»ñÈ¡
- *   2. ÀàÃû»ñÈ¡
- *   3. ClassÀàµÄ¾²Ì¬·½·¨»ñÈ¡
+ *  è·å–ä¸€ä¸ªç±»çš„classæ–‡ä»¶å¯¹è±¡çš„ä¸‰ç§æ–¹å¼
+ *   1. å¯¹è±¡è·å–
+ *   2. ç±»åè·å–
+ *   3. Classç±»çš„é™æ€æ–¹æ³•è·å–
  */
 public class ReflectDemo {
 	public static void main(String[] args)throws ClassNotFoundException {
-		//1. ¶ÔÏó»ñÈ¡
+		//1. å¯¹è±¡è·å–
 		Person p = new Person();
-		//µ÷ÓÃPersonÀàµÄ¸¸ÀàµÄ·½·¨ getClass
-		Class c = p.getClass();
+		//è°ƒç”¨Personç±»çš„çˆ¶ç±»çš„æ–¹æ³• getClass
+		Class<?> c = p.getClass();
 		System.out.println(c);
 		
-		//2. ÀàÃû»ñÈ¡
-	    //Ã¿¸öÀàĞÍ,°üÀ¨»ù±¾ºÍÒıÓÃ,¶¼»á¸³ÓèÕâ¸öÀàĞÍÒ»¸ö¾²Ì¬µÄÊôĞÔ,ÊôĞÔÃû×Öclass
-		Class c1 = Person.class;
+		//2. ç±»åè·å–
+	    //æ¯ä¸ªç±»å‹,åŒ…æ‹¬åŸºæœ¬å’Œå¼•ç”¨,éƒ½ä¼šèµ‹äºˆè¿™ä¸ªç±»å‹ä¸€ä¸ªé™æ€çš„å±æ€§,å±æ€§åå­—class
+		Class<?> c1 = Person.class;
 		System.out.println(c1);
 		
-		//3. ClassÀàµÄ¾²Ì¬·½·¨»ñÈ¡ forName(×Ö·û´®µÄÀàÃû)°üÃû.ÀàÃû
-		Class c2 = Class.forName("cn.itcast.demo1.Person");
+		//3. Classç±»çš„é™æ€æ–¹æ³•è·å– forName(å­—ç¬¦ä¸²çš„ç±»å)åŒ…å.ç±»å
+		Class<?> c2 = Class.forName("cn.itcast.demo1.Person");
 		System.out.println(c2);
 	}
 }

@@ -3,26 +3,26 @@ package cn.itcast.demo1;
 import java.lang.reflect.Method;
 
 /*
- *  ·´Éä»ñÈ¡³ÉÔ±·½·¨²¢ÔËĞĞ
+ *  åå°„è·å–æˆå‘˜æ–¹æ³•å¹¶è¿è¡Œ
  *  public void eat(){}
  */
 public class ReflectDemo6 {
 	public static void main(String[] args) throws Exception{
-		Class c = Class.forName("cn.itcast.demo1.Person");
+		Class<?> c = Class.forName("cn.itcast.demo1.Person");
 		Object obj = c.newInstance();
-		//»ñÈ¡class¶ÔÏóÖĞµÄ³ÉÔ±·½·¨
-		// Method[] getMethods()»ñÈ¡µÄÊÇclassÎÄ¼şÖĞµÄËùÓĞ¹«¹²³ÉÔ±·½·¨,°üÀ¨¼Ì³ĞµÄ
-		// MethodÀàÊÇÃèÊö³ÉÔ±·½·¨µÄ¶ÔÏó
+		//è·å–classå¯¹è±¡ä¸­çš„æˆå‘˜æ–¹æ³•
+		// Method[] getMethods()è·å–çš„æ˜¯classæ–‡ä»¶ä¸­çš„æ‰€æœ‰å…¬å…±æˆå‘˜æ–¹æ³•,åŒ…æ‹¬ç»§æ‰¿çš„
+		// Methodç±»æ˜¯æè¿°æˆå‘˜æ–¹æ³•çš„å¯¹è±¡
 		/*Method[] methods = c.getMethods();
 		for(Method m : methods){
 			System.out.println(m);
 		}*/
 		
-		//»ñÈ¡Ö¸¶¨µÄ·½·¨eatÔËĞĞ
+		//è·å–æŒ‡å®šçš„æ–¹æ³•eatè¿è¡Œ
 		// Method getMethod(String methodName,Class...c)
-		// methodName»ñÈ¡µÄ·½·¨Ãû  c ·½·¨µÄ²ÎÊıÁĞ±í
+		// methodNameè·å–çš„æ–¹æ³•å  c æ–¹æ³•çš„å‚æ•°åˆ—è¡¨
 		Method method = c.getMethod("eat");
-		//Ê¹ÓÃMethodÀàÖĞµÄ·½·¨,ÔËĞĞ»ñÈ¡µ½µÄ·½·¨eat
+		//ä½¿ç”¨Methodç±»ä¸­çš„æ–¹æ³•,è¿è¡Œè·å–åˆ°çš„æ–¹æ³•eat
 		//Object invoke(Object obj, Object...o)
 		method.invoke(obj);
 	}

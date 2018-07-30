@@ -3,26 +3,26 @@ package cn.itcast.demo1;
 import java.lang.reflect.Constructor;
 
 /*
- *  Í¨¹ı·´Éä»ñÈ¡classÎÄ¼şÖĞµÄ¹¹Ôì·½·¨,ÔËĞĞ¹¹Ôì·½·¨
- *  ÔËĞĞ¹¹Ôì·½·¨,´´½¨¶ÔÏó
- *    »ñÈ¡classÎÄ¼ş¶ÔÏó
- *    ´ÓclassÎÄ¼ş¶ÔÏóÖĞ,»ñÈ¡ĞèÒªµÄ³ÉÔ±
+ *  é€šè¿‡åå°„è·å–classæ–‡ä»¶ä¸­çš„æ„é€ æ–¹æ³•,è¿è¡Œæ„é€ æ–¹æ³•
+ *  è¿è¡Œæ„é€ æ–¹æ³•,åˆ›å»ºå¯¹è±¡
+ *    è·å–classæ–‡ä»¶å¯¹è±¡
+ *    ä»classæ–‡ä»¶å¯¹è±¡ä¸­,è·å–éœ€è¦çš„æˆå‘˜
  *    
- *  Constructor ÃèÊö¹¹Ôì·½·¨¶ÔÏóÀà
+ *  Constructor æè¿°æ„é€ æ–¹æ³•å¯¹è±¡ç±»
  */
 public class ReflectDemo1 {
 	public static void main(String[] args) throws Exception {
 	
-		Class c = Class.forName("cn.itcast.demo1.Person");
-		//Ê¹ÓÃclassÎÄ¼ş¶ÔÏó,»ñÈ¡ÀàÖĞµÄ¹¹Ôì·½·¨
-		//  Constructor[]  getConstructors() »ñÈ¡classÎÄ¼ş¶ÔÏóÖĞµÄËùÓĞ¹«¹²µÄ¹¹Ôì·½·¨
-		/*Constructor[] cons = c.getConstructors();
-		for(Constructor con : cons){
+		Class<?> c = Class.forName("cn.itcast.demo1.Person");
+		//ä½¿ç”¨classæ–‡ä»¶å¯¹è±¡,è·å–ç±»ä¸­çš„æ„é€ æ–¹æ³•
+		//  Constructor[]  getConstructors() è·å–classæ–‡ä»¶å¯¹è±¡ä¸­çš„æ‰€æœ‰å…¬å…±çš„æ„é€ æ–¹æ³•
+		/*Constructor<?>[] cons = c.getConstructors();
+		for(Constructor<?> con : cons){
 			System.out.println(con);
 		}*/
-		//»ñÈ¡Ö¸¶¨µÄ¹¹Ôì·½·¨,¿Õ²ÎÊıµÄ¹¹Ôì·½·¨
-		Constructor con =  c.getConstructor();
-		//ÔËĞĞ¿Õ²ÎÊı¹¹Ôì·½·¨,ConstructorÀà·½·¨ newInstance()ÔËĞĞ»ñÈ¡µ½µÄ¹¹Ôì·½·¨
+		//è·å–æŒ‡å®šçš„æ„é€ æ–¹æ³•,ç©ºå‚æ•°çš„æ„é€ æ–¹æ³•
+		Constructor<?> con =  c.getConstructor();
+		//è¿è¡Œç©ºå‚æ•°æ„é€ æ–¹æ³•,Constructorç±»æ–¹æ³• newInstance()è¿è¡Œè·å–åˆ°çš„æ„é€ æ–¹æ³•
 		Object obj = con.newInstance();
 		System.out.println(obj.toString());
 	}

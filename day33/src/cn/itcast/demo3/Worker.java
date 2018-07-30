@@ -2,6 +2,6 @@ package cn.itcast.demo3;
 
 public class Worker {
 	public void job(){
-		System.out.println("上班族在工作");
+		System.out.println("涓婄彮鏃忓湪宸ヤ綔");
 	}
 }

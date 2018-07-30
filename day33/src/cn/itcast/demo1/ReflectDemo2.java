@@ -3,20 +3,20 @@ package cn.itcast.demo1;
 import java.lang.reflect.Constructor;
 
 /*
- *  Í¨¹ı·´Éä,»ñÈ¡ÓĞ²ÎÊıµÄ¹¹Ôì·½·¨²¢ÔËĞĞ
- *  ·½·¨getConstructor,´«µİ¿ÉÒÔ¹¹Ôì·½·¨Ïà¶ÔÓ¦µÄ²ÎÊıÁĞ±í¼´¿É
+ *  é€šè¿‡åå°„,è·å–æœ‰å‚æ•°çš„æ„é€ æ–¹æ³•å¹¶è¿è¡Œ
+ *  æ–¹æ³•getConstructor,ä¼ é€’å¯ä»¥ä¸æ„é€ æ–¹æ³•ç›¸å¯¹åº”çš„å‚æ•°åˆ—è¡¨å³å¯
  */
 public class ReflectDemo2 {
 	public static void main(String[] args)throws Exception {
-		Class c = Class.forName("cn.itcast.demo1.Person");
-		//»ñÈ¡´øÓĞ,StringºÍint²ÎÊıµÄ¹¹Ôì·½·¨
+		Class<?> c = Class.forName("cn.itcast.demo1.Person");
+		//è·å–å¸¦æœ‰,Stringå’Œintå‚æ•°çš„æ„é€ æ–¹æ³•
 		//Constructor<T> getConstructor(Class<?>... parameterTypes)  
-		//Class<?>... parameterTypes ´«µİÒª»ñÈ¡µÄ¹¹Ôì·½·¨µÄ²ÎÊıÁĞ±í
-		Constructor con = c.getConstructor(String.class,int.class);
-		//ÔËĞĞ¹¹Ôì·½·¨
+		//Class<?>... parameterTypes ä¼ é€’è¦è·å–çš„æ„é€ æ–¹æ³•çš„å‚æ•°åˆ—è¡¨
+		Constructor<?> con = c.getConstructor(String.class,int.class);
+		//è¿è¡Œæ„é€ æ–¹æ³•
 		// T newInstance(Object... initargs)  
-		//Object... initargs ÔËĞĞ¹¹Ôì·½·¨ºó,´«µİµÄÊµ¼Ê²ÎÊı
-		Object obj = con.newInstance("ÕÅÈı",20);
+		//Object... initargs è¿è¡Œæ„é€ æ–¹æ³•å,ä¼ é€’çš„å®é™…å‚æ•°
+		Object obj = con.newInstance("å¼ ä¸‰",20);
 		System.out.println(obj);
 	}
 }

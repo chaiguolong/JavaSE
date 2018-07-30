@@ -3,27 +3,27 @@ package cn.itcast.demo1;
 import java.lang.reflect.Field;
 
 /*
- *  ·´Éä»ñÈ¡³ÉÔ±±äÁ¿,²¢ĞŞ¸ÄÖµ
- *  PersonÀàÖĞµÄ³ÉÔ±String name
+ *  åå°„è·å–æˆå‘˜å˜é‡,å¹¶ä¿®æ”¹å€¼
+ *  Personç±»ä¸­çš„æˆå‘˜String name
  */
 public class ReflectDemo5 {
 	public static void main(String[] args) throws Exception{
-		Class c = Class.forName("cn.itcast.demo1.Person");
+		Class<?> c = Class.forName("cn.itcast.demo1.Person");
 		Object obj = c.newInstance();
-		//»ñÈ¡³ÉÔ±±äÁ¿ ClassÀàµÄ·½·¨ getFields() classÎÄ¼şÖĞµÄËùÓĞ¹«¹²µÄ³ÉÔ±±äÁ¿
-		//·µ»ØÖµÊÇField[]    FieldÀàÃèÊö³ÉÔ±±äÁ¿¶ÔÏóµÄÀà
+		//è·å–æˆå‘˜å˜é‡ Classç±»çš„æ–¹æ³• getFields() classæ–‡ä»¶ä¸­çš„æ‰€æœ‰å…¬å…±çš„æˆå‘˜å˜é‡
+		//è¿”å›å€¼æ˜¯Field[]    Fieldç±»æè¿°æˆå‘˜å˜é‡å¯¹è±¡çš„ç±»
 		/*Field[] fields = c.getFields();
 		for(Field f : fields){
 			System.out.println(f);
 		}*/
 		
-		//»ñÈ¡Ö¸¶¨µÄ³ÉÔ±±äÁ¿ String name
-		//ClassÀàµÄ·½·¨  Field getField(´«µİ×Ö·û´®ÀàĞÍµÄ±äÁ¿Ãû) »ñÈ¡Ö¸¶¨µÄ³ÉÔ±±äÁ¿
+		//è·å–æŒ‡å®šçš„æˆå‘˜å˜é‡ String name
+		//Classç±»çš„æ–¹æ³•  Field getField(ä¼ é€’å­—ç¬¦ä¸²ç±»å‹çš„å˜é‡å) è·å–æŒ‡å®šçš„æˆå‘˜å˜é‡
 		Field field = c.getField("name");
 	   
-		//FieldÀàµÄ·½·¨ void set(Object obj, Object value) ,ĞŞ¸Ä³ÉÔ±±äÁ¿µÄÖµ
-		//Object obj ±ØĞëÓĞ¶ÔÏóµÄÖ§³Ö,  Object value ĞŞ¸ÄºóµÄÖµ
-		field.set(obj,"ÍõÎå");
+		//Fieldç±»çš„æ–¹æ³• void set(Object obj, Object value) ,ä¿®æ”¹æˆå‘˜å˜é‡çš„å€¼
+		//Object obj å¿…é¡»æœ‰å¯¹è±¡çš„æ”¯æŒ,  Object value ä¿®æ”¹åçš„å€¼
+		field.set(obj,"ç‹äº”");
 		System.out.println(obj);
 		
 	}

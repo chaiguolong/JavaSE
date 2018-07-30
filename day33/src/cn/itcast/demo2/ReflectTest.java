@@ -4,23 +4,23 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 /*
- *   ¶¨Òå¼¯ºÏÀà,·ºĞÍString
- *   ÒªÇóÏò¼¯ºÏÖĞÌí¼ÓIntegerÀàĞÍ
+ *   å®šä¹‰é›†åˆç±»,æ³›å‹String
+ *   è¦æ±‚å‘é›†åˆä¸­æ·»åŠ Integerç±»å‹
  *   
- *   ·´Éä·½Ê½,»ñÈ¡³ö¼¯ºÏArrayListÀàµÄclassÎÄ¼ş¶ÔÏó
- *   Í¨¹ıclassÎÄ¼ş¶ÔÏó,µ÷ÓÃadd·½·¨
+ *   åå°„æ–¹å¼,è·å–å‡ºé›†åˆArrayListç±»çš„classæ–‡ä»¶å¯¹è±¡
+ *   é€šè¿‡classæ–‡ä»¶å¯¹è±¡,è°ƒç”¨addæ–¹æ³•
  *   
- *   ¶Ô·´Éäµ÷ÓÃ·½·¨ÊÇ·ñÀí½â
+ *   å¯¹åå°„è°ƒç”¨æ–¹æ³•æ˜¯å¦ç†è§£
  */
 public class ReflectTest {
 	public static void main(String[] args)throws Exception {
 		ArrayList<String> array  = new ArrayList<String>();
 		array.add("a");
-		//·´Éä·½Ê½,»ñÈ¡³ö¼¯ºÏArrayListÀàµÄclassÎÄ¼ş¶ÔÏó
-		Class c = array.getClass();
-		//»ñÈ¡ArrayList.classÎÄ¼şÖĞµÄ·½·¨add
+		//åå°„æ–¹å¼,è·å–å‡ºé›†åˆArrayListç±»çš„classæ–‡ä»¶å¯¹è±¡
+		Class<?> c = array.getClass();
+		//è·å–ArrayList.classæ–‡ä»¶ä¸­çš„æ–¹æ³•add
 		Method method = c.getMethod("add",Object.class);
-		//Ê¹ÓÃinvokeÔËĞĞArrayList·½·¨add
+		//ä½¿ç”¨invokeè¿è¡ŒArrayListæ–¹æ³•add
 		method.invoke(array, 150);
 		method.invoke(array, 1500);
 		method.invoke(array, 15000);

@@ -3,16 +3,16 @@ package cn.itcast.demo1;
 import java.lang.reflect.Method;
 
 /*
- *  ·´Éä»ñÈ¡ÓĞ²ÎÊıµÄ³ÉÔ±·½·¨²¢Ö´ĞĞ
+ *  åå°„è·å–æœ‰å‚æ•°çš„æˆå‘˜æ–¹æ³•å¹¶æ‰§è¡Œ
  *  public void sleep(String,int,double){}
  */
 public class ReflectDemo7 {
 	public static void main(String[] args) throws Exception{
-		Class c = Class.forName("cn.itcast.demo1.Person");
+		Class<?> c = Class.forName("cn.itcast.demo1.Person");
 		Object obj = c.newInstance();
-		//µ÷ÓÃClassÀàµÄ·½·¨getMethod»ñÈ¡Ö¸¶¨µÄ·½·¨sleep
+		//è°ƒç”¨Classç±»çš„æ–¹æ³•getMethodè·å–æŒ‡å®šçš„æ–¹æ³•sleep
 		Method method = c.getMethod("sleep", String.class,int.class,double.class);
-		//µ÷ÓÃMethodÀàµÄ·½·¨invokeÔËĞĞsleep·½·¨
-		method.invoke(obj, "ĞİÃß",100,888.99);
+		//è°ƒç”¨Methodç±»çš„æ–¹æ³•invokeè¿è¡Œsleepæ–¹æ³•
+		method.invoke(obj, "ä¼‘çœ ",100,888.99);
 	}
 }

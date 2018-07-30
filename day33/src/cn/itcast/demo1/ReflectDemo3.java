@@ -1,14 +1,14 @@
 package cn.itcast.demo1;
 /*
- * ·´Éä»ñÈ¡¹¹Ôì·½·¨²¢ÔËĞĞ,ÓĞ¿ì½İµãµÄ·½Ê½
- * ÓĞÇ°Ìá:
- *   ±»·´ÉäµÄÀà,±ØĞë¾ßÓĞ¿Õ²ÎÊı¹¹Ôì·½·¨
- *   ¹¹Ôì·½·¨È¨ÏŞ±ØĞëpublic
+ * åå°„è·å–æ„é€ æ–¹æ³•å¹¶è¿è¡Œ,æœ‰å¿«æ·ç‚¹çš„æ–¹å¼
+ * æœ‰å‰æ:
+ *   è¢«åå°„çš„ç±»,å¿…é¡»å…·æœ‰ç©ºå‚æ•°æ„é€ æ–¹æ³•
+ *   æ„é€ æ–¹æ³•æƒé™å¿…é¡»public
  */
 public class ReflectDemo3 {
 	public static void main(String[] args) throws Exception {
-		Class c = Class.forName("cn.itcast.demo1.Person");
-		// ClassÀàÖĞ¶¨Òå·½·¨, T newInstance() Ö±½Ó´´½¨±»·´ÉäÀàµÄ¶ÔÏóÊµÀı
+		Class<?> c = Class.forName("cn.itcast.demo1.Person");
+		// Classç±»ä¸­å®šä¹‰æ–¹æ³•, T newInstance() ç›´æ¥åˆ›å»ºè¢«åå°„ç±»çš„å¯¹è±¡å®ä¾‹
 		Object obj = c.newInstance();
 		System.out.println(obj);
 	}

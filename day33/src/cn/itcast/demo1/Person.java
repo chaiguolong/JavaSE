@@ -6,7 +6,7 @@ public class Person {
 
 	
 	/*static{
-		System.out.println("¾²Ì¬´úÂë¿é");
+		System.out.println("é™æ€ä»£ç å—");
 	}*/
 	
 	public Person(){
@@ -23,14 +23,14 @@ public class Person {
 	}
 	
 	public void eat(){
-		System.out.println("ÈË³Ô·¹");
+		System.out.println("äººåƒé¥­");
 	}
 
 	public void sleep(String s, int a,double d){
-		System.out.println("ÈËÔÚË¯¾õ"+s+"....."+a+"....."+d);
+		System.out.println("äººåœ¨ç¡è§‰"+s+"....."+a+"....."+d);
 	}
 	private void playGame(){
-		System.out.println("ÈËÔÚ´òÓÎÏ·");
+		System.out.println("äººåœ¨æ‰“æ¸¸æˆ");
 	}
 
 	public String toString() {
